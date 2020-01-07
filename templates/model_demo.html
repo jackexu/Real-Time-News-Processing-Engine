@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+    <title>Real-Time News Processing Engine by Deep Learning - Demo</title>
+    <link rel="stylesheet" media="screen" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/bootstrap-theme.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <br>
+
+    <img src="/static/image/logo.jpg" alt="University of Chicago Logo" align="middle" width="500" height="100">
+    <h3>Real-Time News Processing Engine by Deep Learning - Demonstration</h3>
+    <h4><i>A capstone project from the M.Sc. Analytics program</i></h4>
+    <h4><i>Author: Jiaqi Xu and Sarah Qin</i></h4>
+
+    <form action="" method="post" role="form">
+        {{ form.csrf }}
+        <div class="form-group">
+            <label for="human_finding"></label>
+            <h3>Acquiring the text from the following URL and predict the label</h3>
+            <br>
+            <input type="text" class="form-control" id="human_finding" name="human_finding" placeholder="Please enter the URL you want to predict: ">
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+
+    <br>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for message in messages %}
+                {% if "Error" not in message[1] %}
+
+                    <div class="alert alert-info">
+                        <strong>{{ message[1] }}</strong>
+                    </div>
+
+                    <h4> Predicted Label:</h4>
+                    <h3> {{ pred }}</h3>
+
+                    <br>
+
+                    <h4> Prediction Summary:</h4>
+                    {% for table in tables %}
+                        {{ table | safe  }}
+                    {% endfor %}
+
+                {% endif %}
+
+                {% if "Error" in message[1] %}
+                    <div class="alert alert-warning">
+                        {{ message[1] }}
+                    </div>
+                {% endif %}
+
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+</div>
+
+</body>
+
+</html>
