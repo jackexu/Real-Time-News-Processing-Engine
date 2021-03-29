@@ -157,7 +157,7 @@ pycrypto==2.6.1
 pydot==1.4.1
 pygeocoder==1.2.5
 pyglet==1.4.8
-Pygments==2.5.2
+Pygments==2.7.4
 PyHamcrest==1.9.0
 pyLDAvis==2.1.2
 pymagnitude==0.1.120
