@@ -12,10 +12,10 @@ This page only contains the Flask UI part.
 This Flask app is an UI that allows user to input an URL and present the label prediction and corresponding probability.
 
 ### Initial Page
-![Flask_UI](Flask_UI.png)
+![Flask_UI](Flask_UI_Demo.png)
 
 ### Model Result
-![Flask_UI](Flask_UI_Result.png)
+![Flask_UI](Flask_UI_Result_Demo.png)
 
 ## Latest version bug fixs
 
